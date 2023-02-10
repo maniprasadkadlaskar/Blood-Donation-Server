@@ -4,6 +4,7 @@ const cors = require("cors");
 const usersRoute = require("./routes/index")
 require('dotenv').config();
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -25,7 +26,7 @@ app.get("/" , (req , res) => {
     res.send("Hello World");
 })
 
-app.listen(5000 , (err) => {
+app.listen(port , (err) => {
     if(err) console.log(err.message);
     console.log("server started");
 })
